@@ -1,0 +1,22 @@
+spring:
+  main:
+    banner-mode: off
+  redis:
+    database: 0
+    host: localhost
+    #password: "a-very-strong-password"
+    port: 6379
+    client-name: "poc-api-redis-connector"
+    connection-timeout: 60000
+    timeout: 60000
+    num-tests-per-eviction-run: 3
+    lettuce:
+      pool:
+        max-total: 100
+        max-wait: 60000
+        max-idle: 10
+        max-active: 1
+        min-idle: 5
+        max-wait-millis: 1000
+        command-timeout-millis: 2000
+        time-between-eviction-runs: 60000
