@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
 
 import java.io.Serializable;
 
@@ -24,6 +25,8 @@ public class User implements Serializable {
     }
 
     private String name;
+    @Indexed
     private Gender gender;
+    @Indexed
     private int grade;
 }

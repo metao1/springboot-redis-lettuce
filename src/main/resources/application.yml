@@ -6,7 +6,7 @@ spring:
     host: localhost
     #password: "a-very-strong-password"
     port: 6379
-    client-name: "poc-api-redis-connector"
+    client-name: "redis-connector"
     connection-timeout: 60000
     timeout: 60000
     num-tests-per-eviction-run: 3
