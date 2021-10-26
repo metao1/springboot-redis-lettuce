@@ -4,6 +4,7 @@ import de.ippen.cxo.redis.springbootjpa.model.LikeEvent;
 import de.ippen.cxo.redis.springbootjpa.model.User;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SessionCallback;
@@ -20,7 +21,7 @@ public class LikeOperation implements SessionCallback<List<Object>> {
     private static final String LIKE = "like";
     private final long fromUserId;
     private final long toUserId;
-    private final int amount;
+    private final long amount;
 
     @Override
     public <K, V> List<Object> execute(RedisOperations<K, V> redisOperations) throws DataAccessException {

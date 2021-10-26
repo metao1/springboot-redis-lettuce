@@ -60,8 +60,8 @@ class UserRepositoryTest {
 
     @Test
     public void findAllUsersByGender_isSuccessful(){
-        User user1 = User.builder().id(1).gender(User.Gender.MALE).grade(20).name("Mehrdad").build();
-        User user2 = User.builder().id(2).gender(User.Gender.FEMALE).grade(21).name("Ziba").build();
+        User user1 = User.builder().id(1L).gender(User.Gender.MALE).grade(20).name("Mehrdad").build();
+        User user2 = User.builder().id(2L).gender(User.Gender.FEMALE).grade(21).name("Ziba").build();
         userRepository.save(user1);
         userRepository.save(user2);
         assertThat(userRepository.findAllByGender(User.Gender.MALE))

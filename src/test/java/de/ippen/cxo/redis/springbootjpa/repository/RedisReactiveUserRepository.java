@@ -55,6 +55,7 @@ public class RedisReactiveUserRepository {
     @Test
     public void givenUser_whenSet_thenSet() {
         Mono<Boolean> result = reactiveValueOps.set("123", new User(123, "Bill", User.Gender.MALE, 20));
+
         StepVerifier.create(result)
                 .expectNext(true)
                 .verifyComplete();

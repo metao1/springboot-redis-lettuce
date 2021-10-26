@@ -11,9 +11,9 @@ public class LikeEvent extends Event {
     private final long id;
     private final long srcUserId;
     private final long dstUserId;
-    private final int count;
+    private final long count;
 
-    public LikeEvent(int id, int userId, int dstUserId, int count) {
+    public LikeEvent(long id, long userId, long dstUserId, long count) {
         super(new Date().getTime());
         this.id = id;
         this.srcUserId = userId;
