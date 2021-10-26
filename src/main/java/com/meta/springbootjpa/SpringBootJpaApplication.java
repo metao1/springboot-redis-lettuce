@@ -1,4 +1,4 @@
-package de.ippen.cxo.redis.springbootjpa;
+package com.meta.springbootjpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

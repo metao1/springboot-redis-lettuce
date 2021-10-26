@@ -29,7 +29,7 @@ hs_err_pid*
 /.gradle/checksums/checksums.lock
 /.idea/compiler.xml
 /build/reports/tests/test/packages/de.ippen.cxo.redis.springbootjpa.repository.html
-/build/reports/tests/test/classes/de.ippen.cxo.redis.springbootjpa.repository.UserRepositoryTest.html
+/build/reports/tests/test/classes/UserRepositoryTest.html
 /.gradle/7.1.1/dependencies-accessors/dependencies-accessors.lock
 /.gradle/7.1.1/executionHistory/executionHistory.bin
 /.gradle/7.1.1/executionHistory/executionHistory.lock
@@ -55,5 +55,5 @@ hs_err_pid*
 /build/test-results/test/binary/results.bin
 /.gradle/checksums/sha1-checksums.bin
 /build/reports/tests/test/css/style.css
-/build/test-results/test/TEST-de.ippen.cxo.redis.springbootjpa.repository.UserRepositoryTest.xml
+/build/test-results/test/TEST-UserRepositoryTest.xml
 /.idea/uiDesigner.xml

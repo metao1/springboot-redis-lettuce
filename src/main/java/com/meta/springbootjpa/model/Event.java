@@ -1,4 +1,4 @@
-package de.ippen.cxo.redis.springbootjpa.model;
+package com.meta.springbootjpa.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

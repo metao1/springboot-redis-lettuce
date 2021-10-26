@@ -14,7 +14,7 @@ ext {
 }
 
 
-group = 'de.ippen.cxo.redis'
+group = 'com.metao.springbootjpa'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '16'
 

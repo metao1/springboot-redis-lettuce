@@ -1,6 +1,6 @@
-package de.ippen.cxo.redis.springbootjpa.repository;
+package com.meta.springbootjpa.repository;
 
-import de.ippen.cxo.redis.springbootjpa.model.User;
+import com.meta.springbootjpa.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

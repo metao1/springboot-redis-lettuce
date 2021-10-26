@@ -1,4 +1,4 @@
-package de.ippen.cxo.redis.springbootjpa.config;
+package com.meta.springbootjpa.config;
 
 import io.lettuce.core.ClientOptions;
 import io.lettuce.core.SocketOptions;

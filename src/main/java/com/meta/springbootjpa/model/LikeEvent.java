@@ -1,4 +1,4 @@
-package de.ippen.cxo.redis.springbootjpa.model;
+package com.meta.springbootjpa.model;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -9,11 +9,11 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public class LikeEvent extends Event {
     private final long id;
-    private final long srcUserId;
-    private final long dstUserId;
+    private final String srcUserId;
+    private final String dstUserId;
     private final long count;
 
-    public LikeEvent(long id, long userId, long dstUserId, long count) {
+    public LikeEvent(long id, String userId, String dstUserId, long count) {
         super(new Date().getTime());
         this.id = id;
         this.srcUserId = userId;

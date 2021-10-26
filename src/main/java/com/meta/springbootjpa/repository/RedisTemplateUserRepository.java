@@ -1,6 +1,6 @@
-package de.ippen.cxo.redis.springbootjpa.repository;
+package com.meta.springbootjpa.repository;
 
-import de.ippen.cxo.redis.springbootjpa.model.User;
+import com.meta.springbootjpa.model.User;
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.core.ReactiveStreamOperations;
 import org.springframework.data.redis.core.ReactiveValueOperations;
