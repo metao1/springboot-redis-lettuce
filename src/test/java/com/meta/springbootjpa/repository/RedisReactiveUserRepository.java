@@ -1,6 +1,7 @@
 package com.meta.springbootjpa.repository;
 
-import com.meta.springboot.jpa.model.User;
+import com.meta.springboot.redis.model.Gender;
+import com.meta.springboot.redis.model.User;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +26,7 @@ public class RedisReactiveUserRepository extends BaseRepositoryTest {
 
     @Test
     public void givenUser_whenSet_thenSet() {
-        Mono<Boolean> result = reactiveValueOps.set("123", new User("123", "Bill", User.Gender.MALE, 20));
+        Mono<Boolean> result = reactiveValueOps.set("123", new User("123", "Bill", Gender.MALE, 20));
         StepVerifier.create(result)
                 .expectNext(true)
                 .verifyComplete();

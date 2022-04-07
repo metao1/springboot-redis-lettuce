@@ -1,12 +1,9 @@
 package com.meta.springboot.redis.service;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.meta.springboot.jpa.service.LikeOperation.USER;
-
-import com.meta.springboot.jpa.model.User;
-import com.meta.springboot.jpa.repository.UserRepository;
+import com.meta.springboot.redis.model.User;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -14,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class LikeService {
 
     private final RedisTemplate<String, User> userRedisTemplate;

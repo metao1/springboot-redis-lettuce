@@ -20,12 +20,15 @@ import java.time.Duration;
 @Configuration
 public class RedisManagerConfig {
 
-
     @Value("${spring.redis.host:127.0.0.1}")
     private String host;
 
     @Value("${spring.redis.port:6379}")
     private int port;
+
+
+    @Value("${spring.redis.password}")
+    private String password;
 
     @Value("${spring.redis.database:0}")
     private int database;
@@ -45,10 +48,8 @@ public class RedisManagerConfig {
     @Value("${spring.redis.lettuce.pool.max-wait-millis:60000}")
     private int maxWaitMillis;
 
-
     @Value("${spring.redis.lettuce.pool.command-timeout-millis:2000}")
     private int commandTimeoutMillis;
-
 
     @Value("${spring.redis.lettuce.pool.max-total:100}")
     private int maxTotal;
@@ -68,7 +69,7 @@ public class RedisManagerConfig {
     @Bean
     public LettuceConnectionFactory lettucePoolConfig(LettucePoolingClientConfiguration lettucePoolingClientConfiguration, RedisStandaloneConfiguration redisStandaloneConfiguration) {
 
-        LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(redisStandaloneConfiguration, lettucePoolingClientConfiguration);
+        var lettuceConnectionFactory = new LettuceConnectionFactory(redisStandaloneConfiguration, lettucePoolingClientConfiguration);
         lettuceConnectionFactory.setShareNativeConnection(false);
 
         return lettuceConnectionFactory;
@@ -76,23 +77,24 @@ public class RedisManagerConfig {
 
     @Bean
     public RedisStandaloneConfiguration redisStandaloneConfiguration() {
-        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
+        var redisStandaloneConfiguration = new RedisStandaloneConfiguration();
         redisStandaloneConfiguration.setHostName(host);
         redisStandaloneConfiguration.setPort(port);
+        redisStandaloneConfiguration.setPassword(password);
+
         return redisStandaloneConfiguration;
     }
 
     @Bean
     @Primary
     public ReactiveRedisConnectionFactory reactiveRedisConnectionFactory(RedisConfiguration defaultRedisConfig) {
-        LettuceClientConfiguration clientConfig = LettuceClientConfiguration.builder()
-                .useSsl().build();
+        var clientConfig = LettuceClientConfiguration.builder().useSsl().build();
         return new LettuceConnectionFactory(defaultRedisConfig, clientConfig);
     }
 
     @Bean
     public LettucePoolingClientConfiguration lettucePoolConfig(ClientResources clientResources, ClientOptions options) {
-        GenericObjectPoolConfig<Boolean> redisPoolConfig = new GenericObjectPoolConfig<>();
+        var redisPoolConfig = new GenericObjectPoolConfig<>();
 
         redisPoolConfig.setMaxTotal(maxTotal);
         redisPoolConfig.setMaxIdle(maxIdle);

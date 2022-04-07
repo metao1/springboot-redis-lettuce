@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 import lombok.Getter;
 
+import java.util.Optional;
+
 @Getter
 public enum Gender {
         MALE("male"), FEMALE("female");
@@ -17,8 +19,8 @@ public enum Gender {
 
         @JsonCreator
         public static Gender fromValue(String item) {
-                var gender = Optional.ofNullable(Gender.valueOf(item));
-                if(gender!)
+                var gender = Optional.of(Gender.valueOf(item));
+                return  gender.orElseThrow(()->  new RuntimeException("can't find value "  + item ));
         }
 
         @JsonValue

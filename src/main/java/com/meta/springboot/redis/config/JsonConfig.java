@@ -12,14 +12,6 @@ public class JsonConfig {
 
     @Bean
     public ObjectMapper objectMapper() {
-        // objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,
-        // false);
-        // objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT,
-        // true);
-        // objectMapper.setPropertyNamingStrategy(
-        // PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
-        // objectMapper.enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING);
-        // objectMapper.enable(DeserializationFeature.READ_ENUMS_USING_TO_STRI
         return Jackson2ObjectMapperBuilder.json()
                 .featuresToDisable(SerializationFeature.FAIL_ON_EMPTY_BEANS)
                 .featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)

@@ -12,8 +12,8 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import com.meta.springboot.jpa.model.LikeEvent;
-import com.meta.springboot.jpa.model.User;
+import com.meta.springboot.redis.model.LikeEvent;
+import com.meta.springboot.redis.model.User;
 
 @AllArgsConstructor(staticName = "of")
 public class LikeOperation implements SessionCallback<List<Object>> {
@@ -26,7 +26,7 @@ public class LikeOperation implements SessionCallback<List<Object>> {
 
     @Override
     public <K, V> List<Object> execute(RedisOperations<K, V> redisOperations) throws DataAccessException {
-        RedisTemplate<String, User> operations = (RedisTemplate<String, User>) redisOperations;
+        var operations = (RedisTemplate<String, User>) redisOperations;
         var hashOperation = operations.opsForHash();
 
         var fromUser = (User) hashOperation.get(USER, fromUserId);

@@ -4,7 +4,7 @@ spring:
   redis:
     database: 0
     host: localhost
-    #password: "a-very-strong-password"
+    password: "a-very-strong-password"
     port: 6379
     client-name: "redis-connector"
     connection-timeout: 60000

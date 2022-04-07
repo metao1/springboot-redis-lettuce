@@ -6,16 +6,16 @@ plugins {
 
 ext {
     springVersion = '5.2.11.RELEASE'
-    lombokVersion = '1.18.20'
+    lombokVersion = '1.18.22'
     jedisVersion = '3.7.0'
     embeddedRedisServerVersion = '0.6'
-    testContainers = '1.16.0'
-    letuceCoreVersion = '6.1.2.RELEASE'
+    testContainers = '1.16.3'
+    letuceCoreVersion = '6.1.8.RELEASE'
 }
 
-group = 'com.metao.springbootjpa'
+group = 'com.metao.springboot.redis'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17.0'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -27,20 +27,21 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "org.springframework.boot:spring-boot-configuration-processor"
-    implementation "org.springframework.boot:spring-boot-starter-data-redis"
     implementation "org.springframework.boot:spring-boot-starter-data-redis-reactive"
 
-    implementation "com.github.kstyrc:embedded-redis:${embeddedRedisServerVersion}"
-
-
-    implementation "org.msgpack:jackson-dataformat-msgpack:0.8.18"
     /*Redis*/
     implementation "io.lettuce:lettuce-core:${letuceCoreVersion}"
+
+    /*Apache commons*/
+    implementation "org.apache.commons:commons-pool2"
+
     /*Lombok*/
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+
 
     /*JUnit test library*/
     testImplementation('org.junit.jupiter:junit-jupiter')
