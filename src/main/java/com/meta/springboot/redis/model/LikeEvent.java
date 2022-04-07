@@ -1,4 +1,4 @@
-package com.meta.springbootjpa.model;
+package com.meta.springboot.redis.model;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;

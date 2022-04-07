@@ -1,9 +1,10 @@
-package com.meta.springbootjpa.config;
+package com.meta.springboot.redis.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.meta.springbootjpa.model.User;
+import com.meta.springboot.jpa.model.User;
+
 import org.msgpack.jackson.dataformat.MessagePackFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

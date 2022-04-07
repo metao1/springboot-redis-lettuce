@@ -1,16 +1,18 @@
 package com.meta.springbootjpa.service;
 
-import com.meta.springbootjpa.model.User;
+import static com.meta.springboot.jpa.service.LikeOperation.USER;
+
+import com.meta.springboot.jpa.model.User;
+import com.meta.springboot.jpa.repository.UserRepository;
+import com.meta.springboot.jpa.service.LikeService;
 import com.meta.springbootjpa.repository.BaseRepositoryTest;
-import com.meta.springbootjpa.repository.UserRepository;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
-
-import static com.meta.springbootjpa.service.LikeOperation.USER;
 
 class LikeServiceTest extends BaseRepositoryTest {
 

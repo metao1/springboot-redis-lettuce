@@ -1,4 +1,4 @@
-package com.meta.springbootjpa.model;
+package com.meta.springboot.redis.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,11 +18,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id
-    private String id;
-
-    public enum Gender {
-        MALE, FEMALE
-    }
+    private String id;   
 
     private String name;
     @Indexed

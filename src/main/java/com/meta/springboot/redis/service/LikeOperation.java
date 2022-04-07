@@ -1,7 +1,5 @@
-package com.meta.springbootjpa.service;
+package com.meta.springboot.redis.service;
 
-import com.meta.springbootjpa.model.LikeEvent;
-import com.meta.springbootjpa.model.User;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.core.RedisOperations;
@@ -13,6 +11,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
+
+import com.meta.springboot.jpa.model.LikeEvent;
+import com.meta.springboot.jpa.model.User;
 
 @AllArgsConstructor(staticName = "of")
 public class LikeOperation implements SessionCallback<List<Object>> {

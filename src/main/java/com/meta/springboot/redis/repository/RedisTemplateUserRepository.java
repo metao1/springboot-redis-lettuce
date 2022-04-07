@@ -1,6 +1,7 @@
-package com.meta.springbootjpa.repository;
+package com.meta.springboot.redis.repository;
 
-import com.meta.springbootjpa.model.User;
+import com.meta.springboot.jpa.model.User;
+
 import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.core.ReactiveStreamOperations;
 import org.springframework.data.redis.core.ReactiveValueOperations;

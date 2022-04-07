@@ -1,6 +1,7 @@
 package com.meta.springbootjpa.repository;
 
-import com.meta.springbootjpa.model.User;
+import com.meta.springboot.jpa.model.User;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

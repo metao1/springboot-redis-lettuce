@@ -1,6 +1,7 @@
-package com.meta.springbootjpa.model.exception;
+package com.meta.springboot.redis.model.exception;
 
-import com.meta.springbootjpa.model.User;
+import com.meta.springboot.jpa.model.User;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

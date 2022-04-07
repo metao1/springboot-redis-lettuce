@@ -1,13 +1,15 @@
-package com.meta.springbootjpa.service;
+package com.meta.springboot.redis.service;
 
-import com.meta.springbootjpa.model.User;
-import com.meta.springbootjpa.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import static com.meta.springboot.jpa.service.LikeOperation.USER;
+
+import com.meta.springboot.jpa.model.User;
+import com.meta.springboot.jpa.repository.UserRepository;
+
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-
-import static com.meta.springbootjpa.service.LikeOperation.USER;
 
 
 @Slf4j

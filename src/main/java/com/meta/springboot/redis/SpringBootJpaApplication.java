@@ -1,4 +1,4 @@
-package com.meta.springbootjpa;
+package com.meta.springboot.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

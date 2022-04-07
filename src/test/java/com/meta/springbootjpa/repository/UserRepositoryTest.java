@@ -1,6 +1,5 @@
 package com.meta.springbootjpa.repository;
 
-import com.meta.springbootjpa.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
@@ -8,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import com.meta.springboot.jpa.model.User;
+import com.meta.springboot.jpa.repository.UserRepository;
 
 @Slf4j
 class UserRepositoryTest extends BaseRepositoryTest {
