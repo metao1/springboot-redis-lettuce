@@ -4,8 +4,12 @@ import com.meta.springbootjpa.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends CrudRepository<User, String> {
-    Iterable<User> findAllByGender(User.Gender gender);
+    Optional<User> findAllByGender(User.Gender gender);
 
+    @Override
+    Optional<User> findById(String s);
 }

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -37,8 +36,7 @@ class UserRepositoryTest extends BaseRepositoryTest {
         User user2 = User.builder().id("2").gender(User.Gender.FEMALE).grade(21).name("Ziba").build();
         userRepository.save(user1);
         userRepository.save(user2);
-        assertThat(userRepository.findAllByGender(User.Gender.MALE))
-                .containsAll(List.of(user1));
+        assertThat(userRepository.findAllByGender(User.Gender.MALE).get()).isEqualTo(user1);
     }
 
 

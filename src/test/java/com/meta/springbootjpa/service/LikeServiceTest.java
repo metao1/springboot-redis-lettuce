@@ -5,13 +5,14 @@ import com.meta.springbootjpa.repository.BaseRepositoryTest;
 import com.meta.springbootjpa.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import static com.meta.springbootjpa.service.LikeOperation.USER;
 
-@SpringBootTest
-class LikeServiceTest {
+class LikeServiceTest extends BaseRepositoryTest {
 
     @Autowired
     LikeService likeService;
@@ -20,14 +21,12 @@ class LikeServiceTest {
     UserRepository userRepository;
 
     @Autowired
-    RedisTemplate<String, User> userRedisTemplate;
+    TestRestTemplate userRedisTemplate;
 
     @Test
     void likeUser() {
         User user1 = User.builder().id("1").gender(User.Gender.MALE).grade(20).name("Mehrdad").build();
-        User user2 = User.builder().id("2").gender(User.Gender.FEMALE).grade(22).name("Ziba").build();
-        userRedisTemplate.opsForHash().put(USER, user1.getId(), user1);
-        userRedisTemplate.opsForHash().put(USER, user2.getId(), user2);
+        User user2 = User.builder().id("2").gender(User.Gender.FEMALE).grade(22).name("Ziba").build();        
         likeService.likeUser(user1, user2);
     }
 }
