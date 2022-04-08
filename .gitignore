@@ -30,7 +30,7 @@ hs_err_pid*
 /.gradle/buildOutputCleanup/cache.properties
 /.gradle/checksums/checksums.lock
 /.idea/compiler.xml
-/build/reports/tests/test/packages/de.ippen.cxo.redis.springbootjpa.repository.html
+/build
 /build/reports/tests/test/classes/UserRepositoryTest.html
 /.gradle/7.1.1/dependencies-accessors/dependencies-accessors.lock
 /.gradle/7.1.1/executionHistory/executionHistory.bin
