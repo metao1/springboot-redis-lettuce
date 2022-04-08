@@ -1,19 +1,18 @@
 package com.meta.springboot.redis.model.exception;
 
-import com.meta.springboot.redis.model.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "User not exist")
 public class UserNotExist extends RuntimeException {
 
-    private User user;
+    private final String name;
 
-    public UserNotExist() {
-        log.error("user does not exist");
+    public UserNotExist(String name) {
+        this.name = name;
     }
 
-    public UserNotExist(User user) {
-        this.user = user;
+    public String getName() {
+        return name;
     }
 }
