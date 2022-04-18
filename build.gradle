@@ -5,17 +5,14 @@ plugins {
 }
 
 ext {
-    springVersion = '5.2.11.RELEASE'
     lombokVersion = '1.18.22'
-    jedisVersion = '3.7.0'
-    embeddedRedisServerVersion = '0.6'
     testContainers = '1.16.3'
     letuceCoreVersion = '6.1.8.RELEASE'
 }
 
 group = 'com.metao.springboot.redis'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '18'
 
 repositories {
     mavenCentral()
